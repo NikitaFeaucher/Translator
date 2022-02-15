@@ -1,0 +1,62 @@
+/*CSS (каскадная или блочная вёрстка) пришла на замену табличной верстке веб-страниц. 
+По состоянию на 2021-й год актуальной версией является спецификация CSS3. 
+Спецификация CSS4 разрабатывается ещё с 2011 года.*/
+body {
+  background-color: mediumseagreen;
+  font-family: Georgia, Verdana, serif;
+}
+h1 {color: crimson;}
+textarea {
+    /*em и vw одно и тоже*/
+    width: 40vw;
+    height: 20vw;
+    resize: none;/*Запрещаем изменять размер textarea.*/
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    background-color: black;
+}
+a:link { /*Непосещенная(закрытая) сыллка*/
+  color: lime;
+  font-size: 20px;
+  background-color: black;
+  text-decoration: none;
+}
+a:visited {color: lime;} /*Посещенная(открытая) сыллка*/
+a:hover { /*Цвет сыллки при наведении курсором*/
+  color: skyblue;
+  background-color: transparent;
+}
+a:active { /*Выбранная сыллка*/
+  color: gold;
+  font-weight: bold;
+  background-color: transparent;
+}
+.Translation {
+ position: relative;
+ width: 100%;
+ max-width: 400px;
+}
+
+.Translation img {
+ width: 100%;
+ height: auto;
+}
+
+.Translation #TranslateButton {
+ position: absolute;/*Абсолютное позиционирование*/
+ top: 70%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+ background-color: #555;
+ color: white;
+ font-size: 16px;
+ padding: 12px 24px;
+ border: none;/*Убираем границы*/
+ cursor: pointer;/*Устанавливаем курсор руки, при наведении мышкой на объект.*/
+ border-radius: 5px;/*Закругляем кнопку*/
+ text-align: center;/*Централизуем кнопку*/
+}
+#TranslateButton:hover {background-color: lime;}/*Изменяем цвет кнопки при наведении мыши.*/
+#Header {color: lime;}

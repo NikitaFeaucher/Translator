@@ -1,0 +1,54 @@
+<!--Структура нашей Web страницы(DOM)-->
+<!--Все веб-страницы являются HTML-документами. Все HTML документы согласно спецификации HTML5
+должны начинаться с объявления типа документа: <!DOCTYPE html>.-->
+<!DOCTYPE html>
+<!--Язык объявляется с помощью атрибута lang в теге html. Объявление языка важно для приложений
+с расширенными возможностями (средства чтения с экрана) и поисковых систем, к примеру: 
+lang="en-US" -> англ. с диалектом-->
+<html lang="ru">
+    <!--Метаданные HTML - это данные о документе HTML. Метаданные не отображаются на странице,
+    они нужны для служебных целей(поисковых роботов и веб-приложений)-->
+    <head><!--head(голова) - контейнер для метаданных-->
+       <meta charset="UTF-8"><!--Определяем набор символов-->
+       <!--Теперь страница корректно будет отображаться на всех устройствах-->
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Англ.-русск. переводчик</title><!--Устанавливаем заголовок странице.-->
+       <link rel="stylesheet" href="Style/Style.css"><!--Подключаем стили-->
+       <!--Эти скрипты - место хранения всех английских слов с переводом-->
+       <script src="JavaScript/Noun.js"></script><!--Существительные-->
+       <script src="JavaScript/Adjective.js"></script><!--Прилагательные-->
+       <script src="JavaScript/Verb.js"></script><!--Глаголы-->
+       <script src="JavaScript/Adverb.js"></script><!--Наречия-->
+       <script src="JavaScript/Numeral.js"></script><!--Числительные-->
+       <script src="JavaScript/Name.js"></script><!--Имена-->
+       <script src="JavaScript/Surname.js"></script><!--Фамилии-->
+       <script src="JavaScript/Phrase.js"></script><!--Фразы-->
+       <script src="JavaScript/Conjunction.js"></script><!--Союзы-->
+       <script src="JavaScript/Particle.js"></script><!--Частицы-->
+       <script src="JavaScript/Pretext.js"></script><!--Предлоги-->
+       <script src="JavaScript/Pronoun.js"></script><!--Местоимения-->
+       <script src="JavaScript/Translator.js"></script><!--Переводчик.-->
+    </head>
+    <!--Чтобы документ читался XML-анализаторами, необходимо правильно закрыть все элементы HTML.
+    HTML не чувствителен к регистру, в отличии от XHTML-->
+    <body onload="GetTranslatorVocabulary()"><!--Тело веб-страницы-->
+       <!--Заголовки h1 являются самыми большими, а заголовки h6 - самыми маленькими.-->
+       <h1>Англ-<span id="Header">русский</span> переводчик</h1>
+       <hr><!--Рисует горизонтальную линию, которая всегда начинается с новой строки, а после
+       нее все элементы отображаются на следующей строке.-->
+       <!--Элемент <textarea> определяет многострочное поле ввода (текстовой области).
+       Атрибут rows или width определяет видимое количество рядов в текстовой области.
+       Атрибут cols(Columns) или height определяет видимое количество столбцов в текстовой области.-->
+       <textarea id="EnglishText" title="Поле для ввода текста." placeholder="Введите текст на английском."></textarea>
+       <!--alt - это альтернативный текст который будет показываться в том случае если изображение не удасться
+       загрузить. Также он может быть полезен и в озвучке страницы.-->
+       <div class="Translation">
+            <img src="Files/EnglishToRussian.png" id="TranslationImage" alt="Англ.-русский переводчик"
+            width="700" height="500">
+            <button type="button" id="TranslateButton" onclick="TranslateText()">Перевести</button>
+       </div>
+       <!--Как сделать ссылку на адрес электронной почты:-->
+       <a href="mailto:nb49060@gmail.com">Нашли ошибку/неточность - <mark>напишите нам!</mark></a>
+       <!--Все сыллки в HTML это гиперсыллки. href - гиперсыллка.-->
+    </body>
+<html>
